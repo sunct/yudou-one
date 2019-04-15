@@ -1,0 +1,20 @@
+{
+  "pages":[
+ 
+      "pages/index/index",
+      "pages/comment/comment",
+      "pages/about/about",
+      "pages/draw/index",
+      "pages/manage/manage",
+      "pages/draw/draw",
+      "pages/drawdemo/drawdemo"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#3F3F47",
+    "navigationBarTitleText": "雨豆",
+    "navigationBarTextStyle":"white"
+  }
+ 
+}

@@ -1,0 +1,28 @@
+<!--wxml部分-->  
+<view class="container">
+ <view class="vol-card">
+    <image class="vol-picture" src="{{imageUrl}}"   mode="aspectFill" bindtap='seePic'  bindtap="chooseImageFun">先选择图片</image>
+    <view class="vol-meta">
+    <input class="vol-author input_author" placeholder='输入内容'/>
+    </view>
+    <view class="vol-content">
+    <textarea  placeholder="请输入内容"  bindinput="InputFuns" />
+    </view>
+    <view class="vol-makettime">
+      <text class="vol-makettime-text">{{item.show_time}}</text>
+    </view>
+  </view>
+</view>
+<!-- <view class="canvasStyle">
+ <!-- <image src="{{imageUrl}}"></image> -->
+  
+<!-- </view>  -->
+<view class="chooseImage" >
+  <button type="primary"  wx:if="{{showst}}"  bindtap="Okgenerate">
+    生成图文
+  </button>
+  <button type="primary"  wx:if="{{!showst}}" >
+    生成图文
+  </button>
+</view>
+

@@ -1,0 +1,21 @@
+<!--wxml部分-->
+
+<view class="">
+<view class="canvasStyle">
+  <canvas canvas-id="myCanvas"/>
+  
+</view>
+<view class="chooseImage">
+  <button   type="warn" bindtap="chooseImageFun">先选择图片</button >
+  <view class="Input_text">
+    <textarea  placeholder="请输入内容"  bindinput="InputFuns" />
+  </view>
+  <button type="primary"  wx:if="{{showst}}"  bindtap="Okgenerate">
+    生成，并保存
+  </button>
+  <button type="primary"  wx:if="{{!showst}}" >
+    生成，并保存
+  </button>
+</view>
+</view>
+

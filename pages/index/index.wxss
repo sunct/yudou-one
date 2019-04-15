@@ -1,0 +1,82 @@
+.vol-swiper {
+  height: 100%;
+}
+
+.vol-swiper-item {
+  /* padding: 25rpx; */
+  box-sizing: border-box;
+}
+
+.vol-card {
+  padding: 25rpx;
+  border: 1px solid #FAFAFA;
+  border-radius: 5px;
+  background-color: #fff;
+   /* box-shadow: 1px 1px 1px #ebebeb;  */
+}
+
+.vol-picture {
+  width: 100%;
+}
+
+.vol-meta {
+  padding: 10rpx 5rpx;
+  font-size: 12px;
+  color: #888;
+}
+
+.vol-author {
+  float: right;
+}
+
+.vol-content {
+  margin-top: 35rpx;
+  padding: 0 5rpx;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.vol-content-text {
+  width: 100%;
+  min-height: 240rpx;
+  line-height:55rpx;
+  display: inline-block;
+}
+.vol-makettime {
+  font-size: 12px;
+  color:  #888;
+  text-align: right;
+}
+.vol-read-num{
+  font-size: 12px;
+}
+.vol-comment{
+   padding:16px 0px;
+   text-align: center;
+   font-size: 14px;
+   color:#5F749D;
+
+}
+.test-item{
+  margin:0 auto;
+  width:50px;
+}
+.vol-nocheck{
+  margin-bottom:10px;
+  background-color:#E9EAEF;
+  color:#888;
+}
+.auth-item{
+  padding:5px 0px;
+  color: #888;
+}
+.vertical-line{
+  width:20px;
+  font-weight: bolder;
+}
+.this-auth{
+  padding-left:5px;
+}
+.reply-content{
+  color:#4F705F;
+}

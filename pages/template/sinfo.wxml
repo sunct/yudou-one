@@ -1,0 +1,63 @@
+<template name="vol-item">
+  <scroll-view scroll-y="true" style="height: 100%">
+    <view class="vol-card">
+      <image class="vol-picture" src="{{item.img_url}}" data-src="{{item.img_url}}" data-list="{{item.img_url}}" mode="aspectFill" bindtap='seePic'></image>
+      <view class="vol-meta">
+        <text class="vol-number small-caps">NO.<text class="fs36">{{item.id}}</text></text>
+        <text wx:if="{{item.img_author}}" class="vol-author">{{item.img_author}}</text>
+      </view>
+      <view class="vol-content">
+        <text class="vol-content-text"><text selectable='true'>{{item.content}}</text></text>
+      </view>
+      <view class="vol-makettime">
+        <text class="vol-read-num">阅读 {{item.read_num+1}}</text>
+      </view>
+      <view class="vol-makettime">
+        <text class="vol-makettime-text">{{item.show_time}}</text>
+      </view>
+    </view>
+    <view class="vol-comment">
+      <view class="test-item" id="{{item.id}}" bindtap='comment'>写留言</view>
+    </view>
+    <view class="vol-card vol-nocheck" wx:if="{{nocheckcomment!=''}}">
+
+      <view class="vol-content" wx:for="{{nocheckcomment}}" wx:key="i">
+        <view class="flex-wrp" style="flex-direction:row;" wx:if="{{delid!=item.id}}">
+          <view class="vol-ava">
+            <image class="vol-ava" src="{{item.avatarUrl}}"></image>
+          </view>
+          <view class="flex-wrp vol-right-box" style=" flex-direction:column;">
+            <view class="vol-nick">{{item.nickName}}
+              <text wx:if="{{uid==item.uid}}" class="vol-del" id="{{item.id}}" data-index="{{index}}" data-ctype="0" data-sid="{{item.sid}}" bindtap='delComment'>删除</text>
+            </view>
+            <view>{{item.content}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="vol-card" style="margin-bottom:70px;">
+      <view wx:if="{{comment!=''}}">
+        <view class="vol-content" wx:for="{{comment}}" wx:key="i">
+          <view class="flex-wrp" style="flex-direction:row;" wx:if="{{delid!=item.id}}">
+            <view class="vol-ava">
+              <image class="vol-ava" src="{{item.avatarUrl}}"></image>
+            </view>
+            <view class="flex-wrp vol-right-box" style=" flex-direction:column;">
+              <view class="vol-nick">{{item.nickName}}
+                <text class="vol-up" wx:if="{{item.is_up}}">置顶</text>
+                <text wx:if="{{uid==item.uid}}" class="vol-del" id="{{item.id}}" data-index="{{index}}" data-ctype="1" data-sid="{{item.sid}}" bindtap='delComment'>删除</text>
+              </view>
+              <view>{{item.content}}</view>
+              <block wx:if="{{item.reply_content}}">
+               <view class="auth-item"><text class="vertical-line">|</text><text class="this-auth">作者</text></view>
+                <view class="reply-content">{{item.reply_content}}</view>
+                </block>
+              
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="vol-comment-empty" wx:else> 暂无留言 </view>
+    </view>
+  </scroll-view>
+</template>

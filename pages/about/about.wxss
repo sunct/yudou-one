@@ -1,0 +1,41 @@
+/* pages/about/about.wxss */
+
+.logo {
+  height: 80px;
+  width: 100%;
+  text-align: center;
+  background: url(https://img.sunsanmiao.cn/yudou/yudou.png) center no-repeat;
+  background-size: 70px;
+}
+
+.title {
+  margin: 12px 0px 4px;
+  text-align: left;
+  font-size: 16px;
+}
+.ico-tip{
+  float:left;
+  width:30px;
+  height:30px;
+  background: url(https://img.sunsanmiao.cn/yudou/tip.png) center no-repeat;
+  background-size: 26px;
+}
+.about-content {
+  color: #888;
+}
+
+.about-out-box {
+  margin: 20px auto;
+  width: 94%;
+  background: url(https://img.sunsanmiao.cn/yudou/about_bg.png) center no-repeat;
+  background-size: 100%;
+}
+
+.about-box {
+  padding: 20px 10px;
+  line-height: 30px;
+  font-size: 14px;
+  /* border: 1px solid #888; */
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+}

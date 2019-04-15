@@ -1,0 +1,27 @@
+<view class="container">
+  <swiper class="vol-swiper" sid="{{sInfo['current']}}" current="{{current}}" bindchange="handleChange">
+    <swiper-item class="vol-swiper-item"></swiper-item>
+    <block wx:for="{{sInfo}}" wx:for-index="idx" wx:key="{{hpcontent_id}}">
+      <swiper-item class="vol-swiper-item">
+        <import src="../template/sinfo.wxml" />
+        <template is="vol-item" data="{{item: item,comment:comment,nocheckcomment:nocheckcomment,uid:uid,delid:delid}}" />
+      </swiper-item>
+    </block>
+    <swiper-item class="vol-swiper-item"></swiper-item>
+  </swiper>
+  <view class="my_calendar">
+    <view class="flex-wrp gray-bg white-color">
+      <view class="flex-item today-bar" bindtap='goToday'></view>|
+      <view class="flex-item calendar-bar" bindtap='showModal'></view>|
+      <view class="flex-item about-bar" bindtap='aboutMe'></view>
+    </view>
+  </view>
+  <!--屏幕背景变暗的背景  -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <import src="../template/calendar.wxml" />
+    <template is="calendar" data="{{calendardata:calendardata,click_day:click_day}}" />
+
+  </view>
+</view>

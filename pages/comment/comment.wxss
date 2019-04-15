@@ -1,0 +1,31 @@
+/* pages/comment/comment.wxss */
+
+button {
+  width: 88%;
+  margin:20px;
+}
+textarea  {
+  width: 100%;
+}
+.s-comment-content {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.need-login {
+  padding-top: 30%;
+  text-align: center;
+}
+
+.user-ava {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+}
+
+.user-nick {
+  margin: 20rpx 0rpx;
+}
+

@@ -1,0 +1,23 @@
+<!--pages/about/about.wxml-->
+<!--联系我们-->
+<scroll-view scroll-y="true" class="page-body">
+  <view class="about-out-box">
+    <view class="about-box">
+      <view class="logo"></view>
+      <block wx:for="{{content}}" wx:key='about'>
+        <!-- <navigator url="{{item[0]}}"class="item flex-row"> -->
+        <view class="meta">
+        
+          <view class='title'>
+           <view class="ico-tip"></view>
+            {{item.title}}
+          </view>
+          <view class="about-content">
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+        <!-- </navigator> -->
+      </block>
+    </view>
+  </view>
+</scroll-view>

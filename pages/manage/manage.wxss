@@ -1,0 +1,148 @@
+/* pages/manage/manage.wxss */
+
+textarea {
+  padding: 2%;
+  width: 96%;
+  height: 220px;
+  background-color: #e8e8e8;
+  line-height: 20px;
+  border-radius: 5px;
+}
+
+button {
+  margin: 20px 0px;
+  color: #3f3f47;
+}
+
+.swiper-tab {
+  position: fixed;
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  z-index: 200;
+  background-color: #fff;
+}
+
+.swiper-tab-item {
+  width: 30%;
+  color: #434343;
+}
+
+.active {
+  color: #f65959;
+  border-bottom: 4rpx solid #f65959;
+}
+
+swiper {
+  /* height:100%; */
+  height: auto;
+}
+
+.container {
+  height: auto;
+}
+
+.vol-content {
+  /* display: flex; */
+  position: relative;
+  margin: 10px 0px;
+  overflow: hidden;
+}
+
+.nocheck-list {
+  padding: 10px;
+}
+
+.vol-card {
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 0px;
+}
+
+.title {
+  margin: 8px 0px;
+  padding: 10px;
+  line-height: 20px;
+  background-color: #eaebf0;
+  border-radius: 5px;
+  color: #4f705f;
+}
+
+.title>text {
+  padding-left: 20px;
+}
+
+.c-time {
+  padding-top: 5px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.reply, .check, .del {
+  padding-top: 20px;
+  width: 75px;
+  /* height: 75px; */
+  text-align: center;
+  /* border-radius: 35px; */
+}
+
+.check {
+  background: url("https://img.sunsanmiao.cn/yudou/pass.png") #3f3f47 center no-repeat;
+}
+
+.reply {
+  background: url("https://img.sunsanmiao.cn/yudou/reply.png") #9898a0 center no-repeat;
+}
+
+.del {
+  background: url("https://img.sunsanmiao.cn/yudou/del.png") #fff center no-repeat;
+}
+
+.posit {
+  z-index: 0;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  right: 0px;
+  top: 0px;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.reply-box-bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  background-color: rgba(85, 85, 85, 0.6);
+  z-index: 200;
+}
+
+.reply-box-in {
+  position: relative;
+  margin: 0 auto;
+  padding: 30px 10px 10px 10px;
+  height: 320px;
+  width: 90%;
+  top: 10%;
+  background-color: #fff;
+  font-size: 16px;
+  z-index: 300;
+}
+
+.close-tip {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background: url("https://img.sunsanmiao.cn/yudou/close.png") center no-repeat;
+  background-size: 16px;
+}

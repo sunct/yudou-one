@@ -1,0 +1,38 @@
+<template name="calendar">
+  <scroll-view scroll-y="true" class="flex box box-tb box-pack-center box-align-center" style="height: {{calendardata.scrollViewHeight*2}}rpx">
+    <view class="calendar white-color box box-tb">
+      <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+        <view class="prev box box-rl" bindtap="handleCalendar" data-handle="prev">
+          <view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
+        </view>
+        <view class="date-area box box-lr box-align-center box-pack-center">{{calendardata.cur_year || "--"}} 年 {{calendardata.cur_month || "--"}} 月</view>
+        <view class="next box box-lr" bindtap="handleCalendar" data-handle="next">
+          <view class="next-handle box box-lr box-align-center box-pack-center">》</view>
+        </view>
+      </view>
+      <view class="weeks white-color box box-lr box-pack-center box-align-center">
+        <view class="flex week fs28" wx:for="{{calendardata.weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+      </view>
+      <view class="days box box-lr box-wrap">
+        <!-- <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+            </view> -->
+        <!--上一月  -->
+  
+        <view style="width:{{calendardata.gridwidth}}px" class="grid white-color box box-align-center box-pack-center" wx:for="{{calendardata.prev_month_days.prev_days}}" wx:key="{{index}}" data-idx="{{index}}">
+          <view class="day {{((item == calendardata.now_day)&& (calendardata.now_month==calendardata.prev_month_days.prev_month)&&(calendardata.now_year==calendardata.prev_month_days.prev_year) )? 'border-radius gray-2-bg' : ''}} {{(click_day.month==calendardata.prev_month_days.prev_month)&&(click_day.day==item)&&click_day.styleStatus?'border-green-2':''}} {{(click_day.month==calendardata.prev_month_days.prev_month)&&(click_day.day==item)&&!click_day.styleStatus?'border-brown':''}} box box-align-center box-pack-center"  bindtap="selectDate" data-year='{{calendardata.prev_month_days.prev_year}}' data-month="{{calendardata.prev_month_days.prev_month}}"  data-day="{{item}}">{{item}}</view>
+        </view>
+
+        <!--本月  -->
+        <view style="width:{{calendardata.gridwidth}}px" class="grid  white-color box box-align-center box-pack-center" wx:for="{{calendardata.days}}" wx:key="{{index}}" data-idx="{{index}}">
+          <view class="fs32 day {{((item == calendardata.now_day)&& (calendardata.now_month==calendardata.cur_month)&&(calendardata.now_year==calendardata.cur_year) )? 'border-radius  gray-2-bg' : ''}} {{(click_day.month==calendardata.cur_month)&&(click_day.day==item)&&click_day.styleStatus?'border-green-2':''}} {{(click_day.month==calendardata.cur_month)&&(click_day.day==item)&&!click_day.styleStatus?'border-brown':''}} box box-align-center box-pack-center white-color"  bindtap="selectDate"  data-year='{{calendardata.cur_year}}' data-month="{{calendardata.cur_month}}"  data-day="{{item}}">{{item}}</view>
+        </view>
+
+        <!--下一月  -->
+        <view style="width:{{calendardata.gridwidth}}px" class="grid white-color box box-align-center box-pack-center" wx:for="{{calendardata.next_month_days.next_days}}" wx:key="{{index}}" data-idx="{{index}}">
+        
+          <view class="day  {{((item == calendardata.now_day)&& (calendardata.now_month==calendardata.next_month_days.next_month)&&(calendardata.now_year==calendardata.next_month_days.next_year))? 'border-radius gray-2-bg' : ''}} {{(click_day.month==calendardata.next_month_days.next_month)&&(click_day.day==item) && click_day.styleStatus?'border-green-2':''}} {{(click_day.month==calendardata.next_month_days.next_month)&&(click_day.day==item) && (click_day.styleStatus==false)?'border-brown':''}} box box-align-center box-pack-center"  bindtap="selectDate"  data-year='{{calendardata.next_month_days.next_year}}' data-month="{{calendardata.next_month_days.next_month}}"  data-day="{{item}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</template>

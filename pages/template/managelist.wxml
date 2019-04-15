@@ -1,0 +1,49 @@
+<template name="vol-item">
+<view class="container" style="padding:44px 12px;">
+  <view wx:if="{{nocheckcommentall!=''}}">
+    <view class="vol-content" wx:for="{{nocheckcommentall}}" wx:key="i">
+      <view style="{{item.txtStyle}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" class="vol-card">
+        <view class="fs24 title">NO.{{item.sid}}
+          <text>{{item.s_content}}</text>
+        </view>
+        <view class="flex-wrp" style="flex-direction:row;" wx:if="{{delid!=item.id}}">
+          <view class="vol-ava">
+            <image class="vol-ava" src="{{item.avatarUrl}}"></image>
+          </view>
+          <view class="flex-wrp vol-right-box" style=" flex-direction:column;">
+            <view class="vol-nick">{{item.nickName}}
+            </view>
+            <view>{{item.content}}</view>
+            <view class="c-time">{{item.time}}</view>
+          </view>
+
+        </view>
+
+      </view>
+      <!--这里是左滑按钮部分----start-->
+      <view bindtap="delItem"  class="posit">
+
+        <view  wx:if="{{currentTab==1 || (currentTab==0 && item.status==-1)}}" class="check" data-id="{{item.id}}" data-index="{{index}}" catchtap="checkcomment">
+        </view>
+         <view wx:if="{{currentTab==2}}" class="reply" data-id="{{item.id}}" data-index="{{index}}" catchtap="replycomment">
+        </view>
+        <view class="del" data-id="{{item.id}}" data-index="{{index}}" catchtap="notshowcomment">
+        </view>
+      </view>
+      <!--这里是左滑按钮部分----end-->
+    </view>
+  </view>
+  <view class="vol-comment-empty" wx:else> 暂无留言 </view>
+</view>
+<!-- 回复留言 -->
+<view class="reply-box-bg {{display}}">
+  <view class="reply-box-in">
+  <view class="close-tip" bindtap='closebox'></view>
+    <form bindsubmit="bindFormSubmitComment"  report-submit>
+      <input maxlength="10" name="cid" class="display-none" disabled="true" value="{{cid}}" />
+      <textarea placeholder="回复留言内容" name="replycontent" />
+      <button type="primary" formType="submit"> 提交 </button>
+    </form>
+  </view>
+</view>
+</template>
